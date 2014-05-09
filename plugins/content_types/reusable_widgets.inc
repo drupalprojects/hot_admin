@@ -10,14 +10,14 @@ $plugin = array(
   'description' => t('This is list of the generical widget panes that are reusablely available on the site.'),
   'content_types' => array('reusable_widgets'),
   'category' => t('Admin'),
-  'required context' => new ctools_context_required(t('Panopoly Admin'), 'string'),
+  'required context' => new ctools_context_required(t('HotAdmin!'), 'string'),
   'single' => TRUE,
 );
 
 /**
   * Put the output for you pages type in the blocks pages.
   */
-function panopoly_admin_reusable_widgets_content_type_render($subtype, $conf, $panel_args, $context) {
+function hot_admin_reusable_widgets_content_type_render($subtype, $conf, $panel_args, $context) {
 
   // Create the Table Data
   ctools_include('common', 'panels');
@@ -36,11 +36,11 @@ function panopoly_admin_reusable_widgets_content_type_render($subtype, $conf, $p
           theme('image', array('path' => $general_types[$entity->bundle]['icon'])),
           $subtype['category'],
           l($subtype['title'], 'admin/structure/fieldable-panels-panes/view/' . $entity->fpid),
-          l(t('Edit'), 'admin/structure/fieldable-panels-panes/view/' . $entity->fpid . '/edit', array('query' => array('destination' => 'admin/panopoly/panes'))),
+          l(t('Edit'), 'admin/structure/fieldable-panels-panes/view/' . $entity->fpid . '/edit', array('query' => array('destination' => 'admin/Hotsauce/panes'))),
         ),
       );
     }
-  } 
+  }
 
   // Create the Output
   $pane = new stdClass();

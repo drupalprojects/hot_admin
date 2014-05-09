@@ -10,14 +10,14 @@ $plugin = array(
   'description' => t('This is the current theme that is installed.'),
   'content_types' => array('theme'),
   'category' => t('Admin'),
-  'required context' => new ctools_context_required(t('Panopoly Admin'), 'string'), 
+  'required context' => new ctools_context_required(t('HotAdmin!'), 'string'),
   'single' => TRUE,
 );
 
 /**
   * Put the output for you content type in the blocks content.
   */
-function panopoly_admin_theme_content_type_render($subtype, $conf, $panel_args, $context) {
+function hot_admin_theme_content_type_render($subtype, $conf, $panel_args, $context) {
 
   // Kick us off
   $pane = new stdClass();

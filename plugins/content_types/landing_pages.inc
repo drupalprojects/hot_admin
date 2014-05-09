@@ -10,14 +10,14 @@ $plugin = array(
   'description' => t('This is a list of the pages that are available'),
   'content_types' => array('landing_pages'),
   'category' => t('Admin'),
-  'required context' => new ctools_context_required(t('Panopoly Admin'), 'string'),
+  'required context' => new ctools_context_required(t('HotAdmin!'), 'string'),
   'single' => TRUE,
 );
 
 /**
   * Put the output for you pages type in the blocks pages.
   */
-function panopoly_admin_landing_pages_content_type_render($subtype, $conf, $panel_args, $context) {
+function hot_admin_landing_pages_content_type_render($subtype, $conf, $panel_args, $context) {
 
   $pages = array();
 
@@ -27,7 +27,7 @@ function panopoly_admin_landing_pages_content_type_render($subtype, $conf, $pane
   $panels_pages = array('operations' => array());
   page_manager_get_pages($tasks, $panels_pages);
   foreach ($panels_pages['rows'] as $id => $info) {
-    if (strpos($id, 'panopoly_admin')) { 
+    if (strpos($id, 'hot_admin')) {
       // Exclude any admin pages
     }
     elseif ($info['data']['type']['data'] == 'System') {
@@ -37,10 +37,10 @@ function panopoly_admin_landing_pages_content_type_render($subtype, $conf, $pane
       // Exclude any disabled pages
     }
     elseif ($info['data']['type']['data'] == 'Existing') {
-      // Exclude PM Existing Pages 
+      // Exclude PM Existing Pages
     }
-    elseif ($id == 'page-panopoly_search') {
-      // Exclude Panopoly Search's main page
+    elseif ($id == 'page-Hotsauce_search') {
+      // Exclude Hotsauce Search's main page
     }
     else {
       // Include anything else as a general page
@@ -75,7 +75,7 @@ function panopoly_admin_landing_pages_content_type_render($subtype, $conf, $pane
   }
 
   // Create the Output
-  $pane = new stdClass();  
+  $pane = new stdClass();
   if (!empty($pages)) {
     $pane->content = theme('table', array('header' => array(), 'rows' => $pages, 'attributes' => array('class' => 'panels-manage')));
   }

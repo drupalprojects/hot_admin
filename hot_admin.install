@@ -2,13 +2,13 @@
 
 /**
  * @file
- * An installation file for Panopoly Admin
+ * An installation file for HotAdmin!
  */
 
 /**
  * Implements hook_install()
  */
-function panopoly_admin_install() {
+function hot_admin_install() {
 
   // Update the administrator role to have all permissions.
   if ($administrator = user_role_load_by_name('administrator')) {
@@ -19,13 +19,13 @@ function panopoly_admin_install() {
 /**
  * Implements hook_uninstall()
  */
-function panopoly_admin_uninstall() {
+function hot_admin_uninstall() {
 
 }
 
 /**
- * Panopoly RC 5 Update: Enabling Breakpoints Module
+ * Hotsauce RC 5 Update: Enabling Breakpoints Module
  */
-function panopoly_admin_update_7001(&$sandbox) {
+function hot_admin_update_7001(&$sandbox) {
   module_enable(array('breakpoints'));
 }

@@ -10,14 +10,14 @@ $plugin = array(
   'description' => t('This is a standard list of content that are available'),
   'content_types' => array('content'),
   'category' => t('Admin'),
-  'required context' => new ctools_context_required(t('Panopoly Admin'), 'string'),
+  'required context' => new ctools_context_required(t('HotAdmin!'), 'string'),
   'single' => TRUE,
 );
 
 /**
   * Put the output for you content type in the blocks content.
   */
-function panopoly_admin_content_content_type_render($subtype, $conf, $panel_args, $context) {
+function hot_admin_content_content_type_render($subtype, $conf, $panel_args, $context) {
   $pane = new stdClass();
   $pane->title = t('Content Types');
 
@@ -33,15 +33,15 @@ function panopoly_admin_content_content_type_render($subtype, $conf, $panel_args
         $create_links[] =  array(
           'title' => t('Add new', array('!type' => $object->name)),
           'href' => 'node/add/' . $type_url_str,
-          'query' => array(),           
-        );                                      
+          'query' => array(),
+        );
       }
       if (user_access('administer content types')) {
         $create_links[] =  array(
           'title' => t('Configure', array('!type' => $object->name)),
           'href' => 'admin/structure/types/manage/' . $type_url_str,
-          'query' => array(),           
-        );                                      
+          'query' => array(),
+        );
       }
     }
 

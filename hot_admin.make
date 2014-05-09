@@ -1,4 +1,4 @@
-; Panopoly Admin Makefile
+; HotAdmin! Makefile
 
 api = 2
 core = 7.x

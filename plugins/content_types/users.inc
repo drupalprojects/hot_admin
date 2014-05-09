@@ -10,14 +10,14 @@ $plugin = array(
   'description' => t('This is a standard list of users that are available'),
   'content_types' => array('users'),
   'category' => t('Admin'),
-  'required context' => new ctools_context_required(t('Panopoly Admin'), 'string'),
+  'required context' => new ctools_context_required(t('HotAdmin!'), 'string'),
   'single' => TRUE,
 );
 
 /**
   * Put the output for you users type in the blocks users.
   */
-function panopoly_admin_users_content_type_render($subtype, $conf, $panel_args, $context) {
+function hot_admin_users_content_type_render($subtype, $conf, $panel_args, $context) {
   $pane = new stdClass();
   $pane->title = t('User Roles');
 
@@ -32,7 +32,7 @@ function panopoly_admin_users_content_type_render($subtype, $conf, $panel_args, 
         $user_links[] = array(
           'title' => t('Configure'),
           'href' => 'admin/people/permissions/' . $rid,
-          'query' => array(),                         
+          'query' => array(),
         );
       }
       if (user_access('administer users')) {

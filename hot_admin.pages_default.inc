@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * panopoly_admin.pages_default.inc
+ * hot_admin.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_handlers().
  */
-function panopoly_admin_default_page_manager_handlers() {
+function hot_admin_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();
@@ -286,15 +286,15 @@ function panopoly_admin_default_page_manager_handlers() {
 /**
  * Implements hook_default_page_manager_pages().
  */
-function panopoly_admin_default_page_manager_pages() {
+function hot_admin_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'panopoly_admin_layout_library';
+  $page->name = 'hot_admin_layout_library';
   $page->task = 'page';
-  $page->admin_title = 'Panopoly Layouts';
+  $page->admin_title = 'Hotsauce Layouts';
   $page->admin_description = 'This is the page library that manages page layouts.';
-  $page->path = 'admin/panopoly/layouts';
+  $page->path = 'admin/Hotsauce/layouts';
   $page->access = array(
     'plugins' => array(
       1 => array(
@@ -320,7 +320,7 @@ function panopoly_admin_default_page_manager_pages() {
   );
   $page->menu = array(
     'type' => 'normal',
-    'title' => 'Panopoly Layouts',
+    'title' => 'Hotsauce Layouts',
     'name' => 'management',
     'weight' => '0',
     'parent' => array(
@@ -338,9 +338,9 @@ function panopoly_admin_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_panopoly_admin_layout_library_panel_context';
+  $handler->name = 'page_hot_admin_layout_library_panel_context';
   $handler->task = 'page';
-  $handler->subtask = 'panopoly_admin_layout_library';
+  $handler->subtask = 'hot_admin_layout_library';
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
@@ -351,8 +351,8 @@ function panopoly_admin_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(
       0 => array(
-        'identifier' => 'Panopoly Admin',
-        'keyword' => 'panopoly_admin',
+        'identifier' => 'HotAdmin!',
+        'keyword' => 'hot_admin',
         'name' => 'string',
         'id' => 1,
       ),
@@ -403,16 +403,16 @@ function panopoly_admin_default_page_manager_pages() {
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
-  $pages['panopoly_admin_layout_library'] = $page;
+  $pages['hot_admin_layout_library'] = $page;
 
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'panopoly_admin_page_library';
+  $page->name = 'hot_admin_page_library';
   $page->task = 'page';
-  $page->admin_title = 'Panopoly Pages';
+  $page->admin_title = 'Hotsauce Pages';
   $page->admin_description = 'This is the page library that manages page templates, landing pages, and overridden pages.';
-  $page->path = 'admin/panopoly/pages';
+  $page->path = 'admin/Hotsauce/pages';
   $page->access = array(
     'plugins' => array(
       1 => array(
@@ -438,7 +438,7 @@ function panopoly_admin_default_page_manager_pages() {
   );
   $page->menu = array(
     'type' => 'normal',
-    'title' => 'Panopoly Pages',
+    'title' => 'Hotsauce Pages',
     'name' => 'management',
     'weight' => '0',
     'parent' => array(
@@ -456,9 +456,9 @@ function panopoly_admin_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_panopoly_admin_page_library_panel_context';
+  $handler->name = 'page_hot_admin_page_library_panel_context';
   $handler->task = 'page';
-  $handler->subtask = 'panopoly_admin_page_library';
+  $handler->subtask = 'hot_admin_page_library';
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
@@ -469,8 +469,8 @@ function panopoly_admin_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(
       0 => array(
-        'identifier' => 'Panopoly Admin',
-        'keyword' => 'panopoly_admin',
+        'identifier' => 'HotAdmin!',
+        'keyword' => 'hot_admin',
         'name' => 'string',
         'id' => 1,
       ),
@@ -540,16 +540,16 @@ function panopoly_admin_default_page_manager_pages() {
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
-  $pages['panopoly_admin_page_library'] = $page;
+  $pages['hot_admin_page_library'] = $page;
 
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'panopoly_admin_pane_library';
+  $page->name = 'hot_admin_pane_library';
   $page->task = 'page';
-  $page->admin_title = 'Panopoly Panes';
+  $page->admin_title = 'Hotsauce Panes';
   $page->admin_description = 'This is the pane library for the site. See all of the panes you can add to your pages.';
-  $page->path = 'admin/panopoly/panes';
+  $page->path = 'admin/Hotsauce/panes';
   $page->access = array(
     'plugins' => array(
       1 => array(
@@ -575,7 +575,7 @@ function panopoly_admin_default_page_manager_pages() {
   );
   $page->menu = array(
     'type' => 'normal',
-    'title' => 'Panopoly Panes',
+    'title' => 'Hotsauce Panes',
     'name' => 'management',
     'weight' => '0',
     'parent' => array(
@@ -593,9 +593,9 @@ function panopoly_admin_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_panopoly_admin_pane_library_panel_context';
+  $handler->name = 'page_hot_admin_pane_library_panel_context';
   $handler->task = 'page';
-  $handler->subtask = 'panopoly_admin_pane_library';
+  $handler->subtask = 'hot_admin_pane_library';
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
@@ -606,8 +606,8 @@ function panopoly_admin_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(
       0 => array(
-        'identifier' => 'Panopoly Admin',
-        'keyword' => 'panopoly_admin',
+        'identifier' => 'HotAdmin!',
+        'keyword' => 'hot_admin',
         'name' => 'string',
         'id' => 1,
       ),
@@ -658,7 +658,7 @@ function panopoly_admin_default_page_manager_pages() {
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
-  $pages['panopoly_admin_pane_library'] = $page;
+  $pages['hot_admin_pane_library'] = $page;
 
   return $pages;
 

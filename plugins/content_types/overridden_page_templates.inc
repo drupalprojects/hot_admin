@@ -10,14 +10,14 @@ $plugin = array(
   'description' => t('This is a list of overridden page templates'),
   'content_types' => array('pages'),
   'category' => t('Admin'),
-  'required context' => new ctools_context_required(t('Panopoly Admin'), 'string'),
+  'required context' => new ctools_context_required(t('HotAdmin!'), 'string'),
   'single' => TRUE,
 );
 
 /**
   * Put the output for you pages type in the blocks pages.
   */
-function panopoly_admin_overridden_page_templates_content_type_render($subtype, $conf, $panel_args, $context) {
+function hot_admin_overridden_page_templates_content_type_render($subtype, $conf, $panel_args, $context) {
 
   // Assemble the Overridden Template Data
   $overridden_templates = array();
@@ -33,20 +33,20 @@ function panopoly_admin_overridden_page_templates_content_type_render($subtype, 
     ->condition('pe.did', 0, '>')
     ->distinct()
     ->execute()
-    ->fetchAll(); 
+    ->fetchAll();
   foreach ($pages as $overridden_page) {
     $entity_info = entity_get_info($overridden_page->entity_type);
     $entity = entity_load($overridden_page->entity_type, array($overridden_page->entity_id));
     $entity = $entity[$overridden_page->entity_id];
     $entity_uri = entity_uri($overridden_page->entity_type, $entity);
-    $entity_data = panopoly_admin_entity_parse_info($entity, $overridden_page->entity_type);
+    $entity_data = hot_admin_entity_parse_info($entity, $overridden_page->entity_type);
 
     $overridden_templates[] = array(
       'data' => array(
         $entity_data['title'],
         '<em>' . $entity_info['bundles'][$entity_data['bundle_type']]['label'] . ' template' . '</em>',
         l(url($entity_uri['path']), $entity_uri['path']),
-        (panopoly_admin_panelizer_revert_access($entity_data['type'], $entity_data['id'])) ? l(t('Revert'), 'admin/site/panelizer-delete/' . $entity_data['type'] . '/' . $entity_data['id']) : NULL,
+        (hot_admin_panelizer_revert_access($entity_data['type'], $entity_data['id'])) ? l(t('Revert'), 'admin/site/panelizer-delete/' . $entity_data['type'] . '/' . $entity_data['id']) : NULL,
       )
     );
   }

@@ -1,15 +1,15 @@
 <?php
 /**
  * @file
- * panopoly_admin.features.defaultconfig.inc
+ * hot_admin.features.defaultconfig.inc
  */
 
 /**
  * Implements hook_defaultconfig_features().
  */
-function panopoly_admin_defaultconfig_features() {
+function hot_admin_defaultconfig_features() {
   return array(
-    'panopoly_admin' => array(
+    'hot_admin' => array(
       'strongarm' => 'strongarm',
       'user_default_permissions' => 'user_default_permissions',
     ),
@@ -19,7 +19,7 @@ function panopoly_admin_defaultconfig_features() {
 /**
  * Implements hook_defaultconfig_strongarm().
  */
-function panopoly_admin_defaultconfig_strongarm() {
+function hot_admin_defaultconfig_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
@@ -50,7 +50,7 @@ function panopoly_admin_defaultconfig_strongarm() {
 /**
  * Implements hook_defaultconfig_user_default_permissions().
  */
-function panopoly_admin_defaultconfig_user_default_permissions() {
+function hot_admin_defaultconfig_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'access administration pages'.

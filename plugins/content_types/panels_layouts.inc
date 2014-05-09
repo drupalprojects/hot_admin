@@ -10,14 +10,14 @@ $plugin = array(
   'description' => t('This is list of the panels layouts your modules and themes provide.'),
   'content_types' => array('panels_layouts'),
   'category' => t('Admin'),
-  'required context' => new ctools_context_required(t('Panopoly Admin'), 'string'),
+  'required context' => new ctools_context_required(t('HotAdmin!'), 'string'),
   'single' => TRUE,
 );
 
 /**
   * Put the output for you pages type in the blocks pages.
   */
-function panopoly_admin_panels_layouts_content_type_render($subtype, $conf, $panel_args, $context) {
+function hot_admin_panels_layouts_content_type_render($subtype, $conf, $panel_args, $context) {
 
   // Find all the Panels layouts
   $layout_options = array();
@@ -29,7 +29,7 @@ function panopoly_admin_panels_layouts_content_type_render($subtype, $conf, $pan
       if ($layout_option['module'] == 'panels') {
         if (!in_array($layout_option['theme'], array('panels_flexible', 'layout_responsive'))) {
           $layout_type = t('Default (Panels)');
-        } 
+        }
         else if ($layout_option['theme'] == 'panels_flexible') {
           $layout_type = t('Custom (Flexible)');
         }
@@ -37,15 +37,15 @@ function panopoly_admin_panels_layouts_content_type_render($subtype, $conf, $pan
           $layout_type = t('Custom (Responsive)');
         }
       }
-      else if ($layout_option['category'] == 'Panopoly') {
-        $layout_type = t('Default (Panopoly)');
+      else if ($layout_option['category'] == 'Hotsauce') {
+        $layout_type = t('Default (Hotsauce)');
       }
       else {
         $layout_type = 'Custom (Code)';
       }
 
       $layout_name = $layout_option['name'];
-      $layout_status = (!empty($panels_page_allowed_layouts->allowed_layout_settings[$layout_name])) ? _panopoly_admin_general_layout_get_status($layout_name, 'enable') : _panopoly_admin_general_layout_get_status($layout_name, 'disable');
+      $layout_status = (!empty($panels_page_allowed_layouts->allowed_layout_settings[$layout_name])) ? _hot_admin_general_layout_get_status($layout_name, 'enable') : _hot_admin_general_layout_get_status($layout_name, 'disable');
       $layout_options[$layout_option['title'] . '::' . $layout_option['category']] = array(
         'data' => array(
           theme('image', array('path' => $layout_option['path'] . '/' . $layout_option['icon'])),
