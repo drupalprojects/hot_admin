@@ -1,7 +1,7 @@
 name = HotAdmin!
 description = Administrative dashboard and related editing interfaces.
 core = 7.x
-package = hotsauce
+package = HotSauce!
 project = hot_admin
 dependencies[] = admin_views
 dependencies[] = ctools
